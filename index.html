@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   $phone = $_POST["phone"];
+    $email = $_POST["email"];
+}
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор Продаж | Модальное окно с формой</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <button id="myBtn">Кликни</button>
+    <div id="modal-wrapper" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-content__info">
+                <h2>Получите набор файлов для руководителя:</h2>
+                <div class="modal-content__icon-group">
+                    <img src="./img/doc.svg" alt="">
+                    <img src="./img/xls.svg" alt="">
+                    <img src="./img/pdf.svg" alt="">
+                    <img src="./img/pdf.svg" alt="">
+                    <img src="./img/pdf.svg" alt="">
+                    <img src="./img/pdf.svg" alt="">
+                    <img src="./img/pdf.svg" alt="">
+                </div>
+                <div class="modal-content__image"></div>
+
+            </div>
+            <div class="modal-content__form">
+            <form action="./php/amo2.php" method="post">
+                        <div>
+                            <label for="email">Введите Email для получения файлов:</label>
+                            <input type="email" id="email" name="email" placeholder="E-mail"></div>
+                        <div>
+                            <label for="phone">Введите телефон для подтверждения доступа:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (000) 000-00-00" reqired></div>
+                                <input type="submit" id="submit">
+
+                       <!--  <button type="submit" id="submit">
+                            Скачать файлы
+                            <img class="submit-cursor" src="./img/cursor.png">
+                            </img></button> -->
+                        
+
+
+                        <span class="size-group">
+                            <span>PDF 4,7 MB</span>
+                            <span>DOC 0,8 MB</span>
+                            <span>XLS 1,2 MB</span>
+                        </span>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+    <script src="./js/mask.js"></script>
+</body>
+
+</html>
